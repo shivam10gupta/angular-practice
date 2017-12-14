@@ -1,0 +1,42 @@
+<div class="body-bg">
+    <div class="login-icon">
+        <div class="login-icon-box"><i class="fa fa-user fa-4x"></i></div>
+    </div>
+    <div class="login-container">
+        <div>
+            <div class="mobile-login">
+                <h1 class="text-center">Login</h1>
+            </div>
+            <div class="pull-right login-box-50">
+                <div class="login-control">
+                    <form novalidate #loginData="ngForm" class="form" (ngSubmit)="login()" id="loginForm">
+                        <div class="login-controls">
+                            <input type="text" id="userId" class="login-input-control control no-caps" name="Username" maxlength="20" placeholder="USER ID"
+                                [(ngModel)]="loginData.firstName" autocomplete="off">
+                            <input id="userPassword " type="password" class="login-input-control control no-caps" placeholder="Password" name="Userpass"
+                                maxlength="20" [(ngModel)]="loginData.password" autocomplete="off">
+                            <div class="button" id="userLogin"> <input type="submit" class="btn-grid" value="Sign in" id="usersubmit"></div>
+                            <!-- <a (click)="forgotPassword()" class="c-pointer">FORGOT PASSWORD</a> -->
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="pull-left login-box-50">
+                <div class="login-left-text">
+                    <h1>ACL Admin Tool</h1>
+                    <p>Create and Manage Enterprises using ACL powered Admin Tool. Assign privileges, manage privileges for
+                        Enterprise.
+                        <br> Do complete Sender Id Management, Template Management, PUSH/PULL Management and much more for
+                        Enterprises using the fast, reliable &amp; advance Admin Tool
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center copyRights">
+        Powered by ACL Mobile Ltd.
+    </div>
+</div>
