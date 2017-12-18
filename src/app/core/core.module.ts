@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 
 import { CoreService } from './core.service'
 import { LoginComponent } from "./login/login.component";
+import { RegistrationComponent } from "./registration/registration.component";
 
 
 @NgModule({
     declarations: [
-        LoginComponent
+        LoginComponent,
+        RegistrationComponent
     ],
     imports: [
         BrowserModule,

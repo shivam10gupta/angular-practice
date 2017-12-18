@@ -1,6 +1,7 @@
 
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from "./core/login/login.component";
+import { RegistrationComponent } from "./core/registration/registration.component";
 
 
 const appRoutes: Routes = [
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
+    },
+    {
+        path: 'registration',
+        component: RegistrationComponent,
     }
     // {
     //     path: 'adminWeb',

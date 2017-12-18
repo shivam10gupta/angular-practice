@@ -9,14 +9,31 @@
             </div>
             <div class="pull-right login-box-50">
                 <div class="login-control">
-                    <form novalidate #loginData="ngForm" class="form" (ngSubmit)="login()" id="loginForm">
+                    <form novalidate #form="ngForm" class="form" (ngSubmit)="login()" id="loginForm">
                         <div class="login-controls">
-                            <input type="text" id="userId" class="login-input-control control no-caps" name="Username" maxlength="20" placeholder="USER ID"
-                                [(ngModel)]="loginData.firstName" autocomplete="off">
-                            <input id="userPassword " type="password" class="login-input-control control no-caps" placeholder="Password" name="Userpass"
-                                maxlength="20" [(ngModel)]="loginData.password" autocomplete="off">
+                            <input ngModel type="text" id="userId" class="login-input-control control no-caps" name="userEmail" maxlength="20" placeholder="USER ID"
+                                [(ngModel)]="loginData.email" autocomplete="off" pattern="[a-zA-Z0-9]+" #userEmail="ngModel"
+                                required>
+                            <div *ngIf="userEmail.errors && ( userEmail.touched)">
+                                <p [hidden]="!userEmail.errors.required">
+                                    The user email is required
+                                </p>
+                                <p [hidden]="!userEmail.errors.pattern">
+                                    Special character is not allowed
+                                </p>
+                            </div>
+                            <input ngModel id="userPassword" type="password" class="login-input-control control no-caps" placeholder="Password" name="Userpass"
+                                maxlength="20" [(ngModel)]="loginData.password" autocomplete="off" #Userpass="ngModel" required>
+                            <div *ngIf="Userpass.errors && ( Userpass.touched || Userpass.dirty)">
+                                <p [hidden]="!Userpass.errors.required">
+                                    password is required
+                                </p>
+                                <p [hidden]="!Userpass.errors.pattern">
+                                    Special character is not allowed
+                                </p>
+                            </div>
                             <div class="button" id="userLogin"> <input type="submit" class="btn-grid" value="Sign in" id="usersubmit"></div>
-                            <!-- <a (click)="forgotPassword()" class="c-pointer">FORGOT PASSWORD</a> -->
+                            <p>not a user <a routerLink="./registration">signup</a></p>
 
                         </div>
                     </form>

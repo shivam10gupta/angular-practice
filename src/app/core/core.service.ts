@@ -10,10 +10,17 @@ export class CoreService {
     }
 
     loginData(data) {
-        // return this.resourceService.sendPostRequest(data, this.serverApi.loginUrl).then(response => {
-        //     return response;
-        // }).catch((err) => {
-        // });
+        return this.resourceService.sendPostRequest(data, this.serverApi.loginUrl).then(response => {
+            return response;
+        }).catch((err) => {
+        });
+    }
+
+    registerData(data) {
+        return this.resourceService.sendPostRequest(data, this.serverApi.registerUrl).then(response => {
+            return response;
+        }).catch((err) => {
+        });
     }
 
 

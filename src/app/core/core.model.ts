@@ -1,8 +1,13 @@
+export class RegisterData {
+    firstName: string = "";
+    lastName: string = "";
+    email: string = "";
+    password: string = "";
+    mobileNo: string = "";
+    country: string = "";
+}
+
 export class LoginData {
-    firstName: string = "abc";
-    lastName: string = "def";
-    email: string = "aaa@aa.com";
-    password: string = "aaaa";
-    mobileNo: string = "7656765678";
-    country: string = "sdfsdf";
+    email: string = "";
+    password: string = "";
 }
